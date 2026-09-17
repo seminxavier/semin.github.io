@@ -1,48 +1,9 @@
 /* ============================================================
-   Design tokens
-   Palette: deep space navy / warm off-white / photon-ring gold /
-            dark-matter violet
-   ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
-:root{
-  --bg:        #05060c;
-  --bg-alt:    #0b0d18;
-  --bg-raised: #12142250;
-  --text:      #f3f1f7;
-  --text-dim:  #b7b9cc;
-  --text-faint:#7a7d95;
-  --gold:      #f2b880;
-  --gold-dim:  #9c7a4a;
-  --violet:    #9b8fe0;
-  --rule:      #262a3d;
-
-  --font-display: 'Fraunces', serif;
-  --font-body:    'Source Serif 4', serif;
-  --font-mono:    'JetBrains Mono', monospace;
-
-  --max-w: 780px;
-}
-
-*,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-
-body{
-  margin:0;
-  position:relative;
-  background:var(--bg);
-  color:var(--text);
-  font-family:var(--font-body);
-  font-size:18px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ============================================================
    PAGE BACKGROUNDS
    ============================================================ */
 
 /* ------------------------------------------------------------
-   DEFAULT
+   DEFAULT BODY
    ------------------------------------------------------------ */
 
 body{
@@ -57,10 +18,10 @@ body{
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    HOME PAGE
-   Background: potw2426a.jpg
-   ------------------------------------------------------------ */
+   Background image: potw2426a.jpg
+   ============================================================ */
 
 body.home-page{
   background:
@@ -78,10 +39,10 @@ body.home-page{
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    RESEARCH PAGE
-   Background: blckhle.jpeg
-   ------------------------------------------------------------ */
+   Background image: blckhle.jpeg
+   ============================================================ */
 
 body.research-page{
   background:
@@ -99,10 +60,10 @@ body.research-page{
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    OTHER PAGES
    Light blue background
-   ------------------------------------------------------------ */
+   ============================================================ */
 
 body.light-page{
   background:#dcecf3;
@@ -110,25 +71,59 @@ body.light-page{
 }
 
 
-/* ------------------------------------------------------------
+/* ============================================================
+   STARFIELD
+   Only used on dark pages
+   ============================================================ */
+
+body.home-page::after,
+body.research-page::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+
+  background-image:
+    radial-gradient(
+      1.6px 1.6px at 15% 25%,
+      rgba(255,255,255,.9),
+      transparent 60%
+    ),
+    radial-gradient(
+      1.2px 1.2px at 60% 65%,
+      rgba(255,255,255,.7),
+      transparent 60%
+    ),
+    radial-gradient(
+      1.8px 1.8px at 85% 40%,
+      rgba(255,255,255,.85),
+      transparent 60%
+    ),
+    radial-gradient(
+      1px 1px at 35% 85%,
+      rgba(255,255,255,.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      1.3px 1.3px at 70% 10%,
+      rgba(255,255,255,.65),
+      transparent 60%
+    );
+
+  background-repeat:repeat;
+  background-size:220px 220px;
+  opacity:.35;
+}
+
+
+/* ============================================================
    FUTURE BACKGROUND IMAGES
-   ------------------------------------------------------------
-
-   When you want to add another background image later,
-   place the image in the same folder as index.html and
-   style.css.
-
-   For example:
-
-   image1.jpg
-   image2.jpg
-
-   Then activate one of the blocks below.
-
-   ------------------------------------------------------------ */
-
+   Currently disabled
+   ============================================================ */
 
 /*
+
 body.image1-page{
   background:
     linear-gradient(
@@ -141,11 +136,10 @@ body.image1-page{
   background-position:center center;
   background-repeat:no-repeat;
   background-attachment:fixed;
+  background-color:var(--bg);
 }
-*/
 
 
-/*
 body.image2-page{
   background:
     linear-gradient(
@@ -158,34 +152,26 @@ body.image2-page{
   background-position:center center;
   background-repeat:no-repeat;
   background-attachment:fixed;
+  background-color:var(--bg);
 }
+
 */
 
 
-/* ------------------------------------------------------------
+/* ============================================================
    FUTURE IMAGE USAGE
 
-   To use image1 later:
+   To use image1.jpg in the future:
 
    <body class="image1-page">
 
-   To use image2 later:
+   To use image2.jpg in the future:
 
    <body class="image2-page">
 
-   ------------------------------------------------------------ */
+   The images should be placed in the same folder as:
+       index.html
+       research.html
+       style.css
 
-body::after{
-  content:"";
-  position:fixed; inset:0; z-index:-1;
-  pointer-events:none;
-  background-image:
-    radial-gradient(1.6px 1.6px at 15% 25%, rgba(255,255,255,.9), transparent 60%),
-    radial-gradient(1.2px 1.2px at 60% 65%, rgba(255,255,255,.7), transparent 60%),
-    radial-gradient(1.8px 1.8px at 85% 40%, rgba(255,255,255,.85), transparent 60%),
-    radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,.55), transparent 60%),
-    radial-gradient(1.3px 1.3px at 70% 10%, rgba(255,255,255,.65), transparent 60%);
-  background-repeat:repeat;
-  background-size:220px 220px;
-  opacity:.65;
-}
+   ============================================================ */
