@@ -37,33 +37,143 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-/* nebula wash + faint gravitational-wave ripples, pinned to viewport */
-body::before{
-  content:"";
-  position:fixed; inset:0; z-index:-2;
-  background:
-    radial-gradient(ellipse 900px 600px at 12% -8%, rgba(155,143,224,.24), transparent 60%),
-    radial-gradient(ellipse 800px 600px at 100% 10%, rgba(242,184,128,.15), transparent 55%),
-    radial-gradient(ellipse 700px 550px at 45% 105%, rgba(90,170,210,.14), transparent 60%),
-    repeating-radial-gradient(circle at 82% 18%, transparent 0, transparent 58px, rgba(155,143,224,.06) 60px, transparent 63px),
-    var(--bg);
+/* ============================================================
+   PAGE BACKGROUNDS
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DEFAULT
+   ------------------------------------------------------------ */
+
+body{
+  margin:0;
+  position:relative;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:18px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* tiled starfield, two depths */
-body::after{
-  content:"";
-  position:fixed; inset:0; z-index:-1;
-  pointer-events:none;
-  background-image:
-    radial-gradient(1.6px 1.6px at 15% 25%, rgba(255,255,255,.9), transparent 60%),
-    radial-gradient(1.2px 1.2px at 60% 65%, rgba(255,255,255,.7), transparent 60%),
-    radial-gradient(1.8px 1.8px at 85% 40%, rgba(255,255,255,.85), transparent 60%),
-    radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,.55), transparent 60%),
-    radial-gradient(1.3px 1.3px at 70% 10%, rgba(255,255,255,.65), transparent 60%);
-  background-repeat:repeat;
-  background-size:220px 220px;
-  opacity:.65;
+
+/* ------------------------------------------------------------
+   HOME PAGE
+   Background: potw2426a.jpg
+   ------------------------------------------------------------ */
+
+body.home-page{
+  background:
+    linear-gradient(
+      rgba(5,6,12,.48),
+      rgba(5,6,12,.62)
+    ),
+    url("potw2426a.jpg");
+
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-color:var(--bg);
 }
+
+
+/* ------------------------------------------------------------
+   RESEARCH PAGE
+   Background: blckhle.jpeg
+   ------------------------------------------------------------ */
+
+body.research-page{
+  background:
+    linear-gradient(
+      rgba(5,6,12,.52),
+      rgba(5,6,12,.65)
+    ),
+    url("blckhle.jpeg");
+
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-color:var(--bg);
+}
+
+
+/* ------------------------------------------------------------
+   OTHER PAGES
+   Light blue background
+   ------------------------------------------------------------ */
+
+body.light-page{
+  background:#dcecf3;
+  color:#162b36;
+}
+
+
+/* ------------------------------------------------------------
+   FUTURE BACKGROUND IMAGES
+   ------------------------------------------------------------
+
+   When you want to add another background image later,
+   place the image in the same folder as index.html and
+   style.css.
+
+   For example:
+
+   image1.jpg
+   image2.jpg
+
+   Then activate one of the blocks below.
+
+   ------------------------------------------------------------ */
+
+
+/*
+body.image1-page{
+  background:
+    linear-gradient(
+      rgba(5,6,12,.50),
+      rgba(5,6,12,.65)
+    ),
+    url("image1.jpg");
+
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+*/
+
+
+/*
+body.image2-page{
+  background:
+    linear-gradient(
+      rgba(5,6,12,.50),
+      rgba(5,6,12,.65)
+    ),
+    url("image2.jpg");
+
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+*/
+
+
+/* ------------------------------------------------------------
+   FUTURE IMAGE USAGE
+
+   To use image1 later:
+
+   <body class="image1-page">
+
+   To use image2 later:
+
+   <body class="image2-page">
+
+   ------------------------------------------------------------ */
 
 a{ color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold-dim); }
 a:hover{ border-bottom-color:var(--gold); }
