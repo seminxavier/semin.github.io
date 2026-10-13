@@ -642,13 +642,26 @@ body.home::before {
     );
 }
 
-/* Keep the existing starfield on the home page */
-
-body.home::after {
-  pointer-events: none;
+/* Home-page navigation: left aligned, with the right side blank */
+body.home header.site .home-nav-wrap {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-/* Left-align navigation on the home page */
-body.home header.site .wrap {
+body.home header.site .home-nav-wrap nav.primary {
+    margin: 0 auto 0 0;
+}
+
+body.home header.site .home-nav-wrap nav.primary ul {
+    display: flex;
     justify-content: flex-start;
+    gap: 26px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
