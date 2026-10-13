@@ -642,14 +642,17 @@ body.home::before {
     );
 }
 
-/* Home page: keep navigation at the left */
+/* Home page: full-width header with navigation on the far left */
 body.home header.site .wrap {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 16px 24px;
     display: flex;
-    justify-content: flex-start !important;
+    justify-content: flex-start;
     align-items: center;
 }
 
-/* Keep the navigation itself at the left */
 body.home header.site nav.primary {
     margin-left: 0;
     margin-right: auto;
