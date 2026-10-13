@@ -642,14 +642,15 @@ body.home::before {
     );
 }
 
-/* Keep the existing starfield on the home page */
-
-body.home::after {
-  pointer-events: none;
-}
-
-/* Left-align navigation on the home page */
+/* Home page: keep navigation at the left */
 body.home header.site .wrap {
-    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
 }
 
+/* Keep the navigation itself at the left */
+body.home header.site nav.primary {
+    margin-left: 0;
+    margin-right: auto;
+}
