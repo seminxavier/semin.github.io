@@ -647,3 +647,9 @@ body.home::before {
 body.home::after {
   pointer-events: none;
 }
+
+/* Left-align navigation on the home page */
+body.home header.site .wrap {
+    justify-content: flex-start;
+}
+
