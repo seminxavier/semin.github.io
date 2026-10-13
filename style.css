@@ -642,18 +642,13 @@ body.home::before {
     );
 }
 
-/* Home page: full-width header with navigation on the far left */
-body.home header.site .wrap {
-    max-width: none;
-    width: 100%;
-    margin: auto;
-    padding: 16px 24px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+/* Keep the existing starfield on the home page */
+
+body.home::after {
+  pointer-events: none;
 }
 
-body.home header.site nav.primary {
-    margin-left: auto;
-    margin-right: auto;
+/* Left-align navigation on the home page */
+body.home header.site .wrap {
+    justify-content: flex-start;
 }
